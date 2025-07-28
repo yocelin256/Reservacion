@@ -299,27 +299,41 @@ function enviarMensajeDesdeBoton(texto) {
 let bienvenidaMostrada = false;
 
 function toggleChat() {
-    const chat = document.getElementById("chat-container");
-    const chatBox = document.getElementById("chat-box");
+  const chat = document.getElementById("chat-container");
+  const chatBox = document.getElementById("chat-box");
 
-    const abierto = (chat.style.display === "block");
+  const abierto = chat.classList.contains("show");
 
-    chat.style.display = abierto ? "none" : "block";
+  if (abierto) {
+    chat.classList.remove("show");
+    chat.classList.add("hide");
 
-    if (!abierto && !bienvenidaMostrada) {
-        const bienvenida = document.createElement("div");
-        bienvenida.textContent = "¡Hola! 👋 Soy MunBot y estoy aquí para ayudarte. ¿Sobre qué te gustaría saber?";
-        bienvenida.style.alignSelf = "flex-start";
-        bienvenida.style.color = "#35241dff";
-        bienvenida.style.padding = "8px 12px";
-        bienvenida.style.borderRadius = "18px 18px 18px 0";
-        bienvenida.style.maxWidth = "80%";
-        bienvenida.style.fontSize = "14px";
-        bienvenida.style.boxShadow = "0 1px 4px rgba(0,0,0,0.1)";
-        chatBox.appendChild(bienvenida);
-        chatBox.scrollTop = chatBox.scrollHeight;
-        bienvenidaMostrada = true;
+    setTimeout(() => {
+      chat.style.display = "none";
+    }, 300); // tiempo igual al fadeOut
+  } else {
+    chat.classList.remove("hide");
+    chat.style.display = "block";
+
+    setTimeout(() => {
+      chat.classList.add("show");
+    }, 10); // pequeño delay para activar la animación
+
+    if (!bienvenidaMostrada) {
+      const bienvenida = document.createElement("div");
+      bienvenida.textContent = "¡Hola! 👋 Soy MunBot y estoy aquí para ayudarte. ¿Sobre qué te gustaría saber?";
+      bienvenida.style.alignSelf = "flex-start";
+      bienvenida.style.color = "#35241dff";
+      bienvenida.style.padding = "8px 12px";
+      bienvenida.style.borderRadius = "18px 18px 18px 0";
+      bienvenida.style.maxWidth = "80%";
+      bienvenida.style.fontSize = "14px";
+      bienvenida.style.boxShadow = "0 1px 4px rgba(0,0,0,0.1)";
+      chatBox.appendChild(bienvenida);
+      chatBox.scrollTop = chatBox.scrollHeight;
+      bienvenidaMostrada = true;
     }
+  }
 }
 
 
