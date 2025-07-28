@@ -251,3 +251,75 @@ function enviarMensaje() {
 
     document.getElementById("mensaje").value = "";
 }
+
+function respuestaRapida(texto) {
+    enviarMensajeDesdeBoton(texto);
+}
+
+function enviarMensajeDesdeBoton(texto) {
+    let chatBox = document.getElementById("chat-box");
+
+    // Mensaje del usuario
+    let msgUsuario = document.createElement("div");
+    msgUsuario.style.alignSelf = "flex-end";
+    msgUsuario.style.color = "#5a3b2e";
+    msgUsuario.style.padding = "8px 12px";
+    msgUsuario.style.borderRadius = "18px 18px 0 18px";
+    msgUsuario.style.maxWidth = "80%";
+    msgUsuario.style.fontSize = "14px";
+    msgUsuario.style.boxShadow = "0 1px 4px rgba(0,0,0,0.1)";
+    msgUsuario.textContent = texto;
+    chatBox.appendChild(msgUsuario);
+
+    // Fetch al backend
+    fetch("forms/chatbot.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "mensaje=" + encodeURIComponent(texto)
+    })
+    .then(response => response.text())
+    .then(data => {
+        let msgBot = document.createElement("div");
+        msgBot.style.alignSelf = "flex-start";
+        msgBot.style.color = "#35241dff";
+        msgBot.style.padding = "8px 12px";
+        msgBot.style.borderRadius = "18px 18px 18px 0";
+        msgBot.style.maxWidth = "80%";
+        msgBot.style.fontSize = "14px";
+        msgBot.style.boxShadow = "0 1px 4px rgba(0,0,0,0.1)";
+        msgBot.textContent = data;
+        chatBox.appendChild(msgBot);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    });
+}
+
+// mensaje de bienvenidas
+let bienvenidaMostrada = false;
+
+function toggleChat() {
+    const chat = document.getElementById("chat-container");
+    const chatBox = document.getElementById("chat-box");
+
+    const abierto = (chat.style.display === "block");
+
+    chat.style.display = abierto ? "none" : "block";
+
+    if (!abierto && !bienvenidaMostrada) {
+        const bienvenida = document.createElement("div");
+        bienvenida.textContent = "¡Hola! 👋 Soy MunBot y estoy aquí para ayudarte. ¿Sobre qué te gustaría saber?";
+        bienvenida.style.alignSelf = "flex-start";
+        bienvenida.style.color = "#35241dff";
+        bienvenida.style.padding = "8px 12px";
+        bienvenida.style.borderRadius = "18px 18px 18px 0";
+        bienvenida.style.maxWidth = "80%";
+        bienvenida.style.fontSize = "14px";
+        bienvenida.style.boxShadow = "0 1px 4px rgba(0,0,0,0.1)";
+        chatBox.appendChild(bienvenida);
+        chatBox.scrollTop = chatBox.scrollHeight;
+        bienvenidaMostrada = true;
+    }
+}
+
+

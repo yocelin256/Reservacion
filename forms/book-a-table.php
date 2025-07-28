@@ -36,12 +36,12 @@ if($conn->query($sql) === TRUE){
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'yocelingarcia2110@gmail.com';      // Cambia aquí tu correo
-    $mail->Password   = 'qfqe apsa rcbr hktq';              // Cambia aquí la contraseña o app password
+    $mail->Username   = 'munclubacapulco@gmail.com';      // Cambia aquí tu correo
+    $mail->Password   = 'kkke igjm ifnu wqgh';              // Cambia aquí la contraseña o app password
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
 
-    $mail->setFrom('yocelingarcia2110@gmail.com', 'MunClub');
+    $mail->setFrom('munclubacapulco@gmail.com', 'MunClub');
     $mail->addAddress($email, $name);
     $mail->Subject = 'Confirmacion de tu reservacion';
 

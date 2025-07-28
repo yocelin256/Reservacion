@@ -28,7 +28,11 @@ $respuestas = [
     "contacto" => [
     "palabras" => ["contacto", "teléfono", "número", "cómo los contacto", "cómo comunicarme", "hablar con alguien", "whatsapp", "mandar mensaje", "me puedo comunicar", "para contactarlos"],
     "respuesta" => "¡Claro! Puedes comunicarte con nosotros al número: +52 221 125 8721 📞"
-],
+    ],
+    "evento" => [
+    "palabras" => ["evento"],
+    "respuesta" => "Por ahora no hay eventos disponibles. Todos los eventos se publicarán aquí en la página o en nuestras redes sociales. ¡Síguenos para no perderte nada! 🎉✨"
+    ],
 
 ];
 

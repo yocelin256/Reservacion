@@ -1373,8 +1373,7 @@
 
   </footer>
 
-  <!-- Scroll Top -->
-  <!-- <a href="#" id="" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> -->
+
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -1399,6 +1398,7 @@
 ">
   <img src="https://cdn-icons-png.flaticon.com/512/8943/8943377.png" alt="Chat" style="width: 40px; height: 40px;">
 </div>
+
 
 <!-- Caja de chat -->
 <div id="chat-container" style="
@@ -1447,24 +1447,90 @@
     </div>
 
   <!-- Input -->
-  <div style="display: flex; gap: 5px; padding: 10px; border-top: 1px solid #ddd; background-color: #fdf6ef;">
-    <input type="text" id="mensaje" placeholder="Escribe tu mensaje..." style="
-            flex: 1;
-            padding: 8px 12px;
-            border-radius: 20px;
-            border: 1px solid #ccc;
-            outline: none;
-            font-size: 14px;
-        ">
-    <button onclick="enviarMensaje()" style="
-            padding: 8px 15px;
-            background-color: #a37557;
-            color: white;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-        ">Enviar</button>
-  </div>
+  <!-- Opciones de botones -->
+<!-- Opciones de botones -->
+<div style="
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background-color: #fdf6ef;
+  justify-content: center;
+  max-height: 140px;      
+  overflow-y: auto;     
+">
+
+  <button onclick="respuestaRapida('Hola')" style="
+    flex: 1 0 45%;
+    padding: 6px 10px;
+    font-size: 13px;
+    background-color: #a37557;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  ">Hola</button>
+
+  <button onclick="respuestaRapida('¿Dónde están ubicados?')" style="
+    flex: 1 0 45%;
+    padding: 6px 10px;
+    font-size: 13px;
+    background-color: #a37557;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  ">¿Dónde están ubicados?</button>
+
+  <button onclick="respuestaRapida('¿Cuáles son sus horarios de atención?')" style="
+    flex: 1 0 45%;
+    padding: 6px 10px;
+    font-size: 13px;
+    background-color: #a37557;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  ">¿Cuáles son sus horarios de atención?</button>
+
+  <button onclick="respuestaRapida('¿Para contactarlos?')" style="
+    flex: 1 0 45%;
+    padding: 6px 10px;
+    font-size: 13px;
+    background-color: #a37557;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  ">Contacto</button>
+
+  <button onclick="respuestaRapida('¿Como puedo reservar?')" style="
+    flex: 1 0 45%;
+    padding: 6px 10px;
+    font-size: 13px;
+    background-color: #a37557;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  ">Realizar una reservacion</button>
+
+  <button onclick="respuestaRapida('Proximos eventos')" style="
+    flex: 1 0 45%;
+    padding: 6px 10px;
+    font-size: 13px;
+    background-color: #a37557;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  ">Proximos eventos</button>
+
+  
+</div>
+
+
 </div>
 
 
