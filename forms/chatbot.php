@@ -31,7 +31,7 @@ $respuestas = [
     ],
     "evento" => [
     "palabras" => ["evento"],
-    "respuesta" => "Por ahora no hay eventos disponibles. Todos los eventos se publicarán aquí en la página o en nuestras redes sociales. ¡Síguenos para no perderte nada! 🎉✨"
+    "respuesta" => "Próximos eventos en agosto: 9 DJ Ithay, 10 DJ Black Factor, 16 DJ Ithay y 17 Twisted Sisters. ¡Síguenos para no perderte nada! 🎉✨"
     ],
 
 ];
